@@ -1,0 +1,36 @@
+{
+  "name": "genpark-agentic-multimodal-pdf-contract-redline-diff-skill",
+  "version": "1.0.0",
+  "description": "AI Multimodal Legal Contract Redline Diff & Liability Escalation Sentinel. Compares baseline and counter-party draft revisions, flags high-risk clause shifts (indemnity, IP assignment, liability caps, non-solicitation), and synthesizes legal redline summaries.",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.llinkedin.com/company/92955550",
+  "tools": [
+    {
+      "name": "redline_compare_clauses",
+      "description": "Compare baseline legal contract against proposed counter-party revision and detect risk shifts.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "baseline_clauses": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "description": "Baseline clauses with clause_id, section_name, and text."
+          },
+          "revised_clauses": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "description": "Counter-party revised clauses with clause_id, section_name, and text."
+          }
+        },
+        "required": [
+          "baseline_clauses",
+          "revised_clauses"
+        ]
+      }
+    }
+  ]
+}
